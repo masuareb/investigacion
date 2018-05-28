@@ -14,10 +14,18 @@
         />
 
     <Button
+        android:id="@+id/buttonTemp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Temp"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/buttonExportData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Exportar datos"
-        android:enabled="false"/>
+        android:enabled="true"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"

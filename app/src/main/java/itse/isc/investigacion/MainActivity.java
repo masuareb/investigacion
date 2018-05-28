@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openSensorData() {
+
         Intent intent = new Intent(this, ViewSensorDataActivity.class);
         startActivity(intent);
     }

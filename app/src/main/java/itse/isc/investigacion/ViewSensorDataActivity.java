@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import itse.isc.investigacion.model.SensorData;
 
 public class ViewSensorDataActivity extends AppCompatActivity {
     RecyclerView recyclerView;
+    Button buttonExportData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class ViewSensorDataActivity extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        buttonExportData = (Button) findViewById(R.id.buttonExportData);
 
         // Habilitamos el acceso a la base de datos (en un hilo aparte)
         new Thread(new Runnable() {
@@ -36,6 +39,13 @@ public class ViewSensorDataActivity extends AppCompatActivity {
             }
         }).start();                                    ;
 
+        buttonExportData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Exportar datos", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
     }
 
     private void populateData(final List<SensorData> data) {
