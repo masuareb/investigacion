@@ -83,5 +83,10 @@ public class SensorData {
     public void setAccelerometerY(double accelerometerY) {
         this.accelerometerY = accelerometerY;
     }
+
+    @Override
+    public String toString() {
+        return this.dateData + "," + this.locationLatitude + "," + locationLongitude;
+    }
 }
 
